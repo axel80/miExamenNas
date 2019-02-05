@@ -22,14 +22,7 @@ class CreateAlumnosTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('materia_alumnos', function(Blueprint $table){
-            $table->increments('id');
-            $table->integer('alumno_id')->unsigned()->comment('relacion alumnos');
-            $table->integer('materia_id')->unsigned()->comment('relacion alumnos');
-            $table->integer('nota_1')->unsigned()->comment('primera nota');
-            $table->integer('nota_2')->unsigned()->comment('segunda nota');
-            $table->integer('promedio')->unsigned()->comment('promedio de dos notas');
-        });
+        
     }
 
     /**
@@ -39,7 +32,6 @@ class CreateAlumnosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materia_alumnos');
         Schema::dropIfExists('alumnos');
     }
 }

@@ -27,4 +27,10 @@ Route::group(['middleware' => 'auth'], function(){
         'uses' => 'AlumnoController@update',
         'as'   => 'alumno.update'
     ]);
+
+    Route::resource('materias', 'MateriaController');
+    Route::post('materia/update', [
+        'uses' => 'MateriaController@update',
+        'as'   => 'materia.update'
+    ]);
 });

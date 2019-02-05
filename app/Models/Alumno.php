@@ -12,7 +12,7 @@ class Alumno extends Model
         'nombres', 'apellidos', 'grado', 'seccion'
     ];
 
-    public function Materias(){
-        $this->belongsToMany('App\Models\Materia', 'materia_alumnos', 'alumno_id', 'materia_id');
+    public function materias(){
+        $this->hasMany('App\Models\Materia',  'alumno_id', 'id');
     }
 }
