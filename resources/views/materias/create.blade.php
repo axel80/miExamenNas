@@ -8,7 +8,7 @@
                 <div class="panel-heading">Crear alumno</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('materia.store') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('materias.store') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group">

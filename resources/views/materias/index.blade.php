@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <a href="materia/create" class="btn btn-primary">Crear materia</a>
+                    <a href="materias/create" class="btn btn-primary">Crear materia</a>
                     <a href="/home" class="btn btn-primary">Inicio</a>
                     <hr>
 

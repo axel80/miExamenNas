@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Materia;
+use App\Models\Alumno;
 
 class MateriaController extends Controller
 {
@@ -26,7 +27,7 @@ class MateriaController extends Controller
      */
     public function create()
     {
-        $alumnos = Alumno::orderBy('id', 'ASC')->pluck('id', 'nombres');
+        $alumnos = Alumno::orderBy('id', 'ASC')->pluck('nombres', 'id');
         return view('materias.create')->with('alumnos', $alumnos);
     }
 
@@ -64,7 +65,10 @@ class MateriaController extends Controller
     public function edit($id)
     {
         $materia = Materia::findOrfail($id);
-        return view('materias.edit')->with('materia', $materia);
+        $alumnos = Alumno::orderBy('id', 'ASC')->pluck('nombres', 'id');
+        return view('materias.edit')
+                ->with('materia', $materia)
+                ->with('alumnos', $alumnos);
     }
 
     /**
@@ -81,7 +85,7 @@ class MateriaController extends Controller
         $materia->fill($request->all());
         $materia->update();
 
-        return redirect(route('materia.index'));
+        return redirect(route('materias.index'));
     }
 
     /**

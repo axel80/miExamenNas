@@ -11,11 +11,11 @@ class Materia extends Model
 
     public $primaryKey = 'id';
     protected $fillable = [
-        'nombre_materia', 'nota1', 'nota1', 'alumno_id'
+        'nombre_materia', 'nota1', 'nota2', 'alumno_id'
         
     ];
 
     public function alumno(){
-        $this->belongsTo('App\Models\Alumno',  'alumno_id');
+        return $this->belongsTo('App\Models\Alumno',  'alumno_id', 'id');
     }
 }

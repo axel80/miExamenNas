@@ -13,6 +13,6 @@ class Alumno extends Model
     ];
 
     public function materias(){
-        $this->hasMany('App\Models\Materia',  'alumno_id', 'id');
+        return $this->hasMany('App\Models\Materia', 'alumno_id', 'id');
     }
 }
